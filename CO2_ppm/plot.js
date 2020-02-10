@@ -237,6 +237,11 @@ function debounce(callback, wait, immediate = false) {
 }
 
 const update = debounce((selectedYear) => {
+	// Preserve rotation
+	document.querySelector('#plot');
+	const eye = plot.layout['scene'].camera.eye;
+	
+
 	const year = yearMap[selectedYear];
 
 	// Update the PPM points.
@@ -250,6 +255,7 @@ const update = debounce((selectedYear) => {
 	currentLineTrace.x = years.slice(0, Math.max(yearIndex, 1));
 	currentLineTrace.y = ppmList.slice(0, Math.max(yearIndex, 1));
 	Plotly.redraw('plot');
+	Plotly.relayout(plot, 'scene.camera.eye', eye);
 
 	document.querySelector('.year').innerText = selectedYear;
 	document.querySelector('.ppm').innerText = Math.floor(CO2_PPM[year]) + ' ppm';
