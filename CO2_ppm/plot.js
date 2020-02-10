@@ -187,13 +187,6 @@ function visualize() {
 				  ticks: '',
 				  showticklabels: false
 			},
-			camera: {
-		      eye: {
-		      	x: 0.69,
-		      	y: 1.68,
-		      	z: 0.13
-		      },
-		    },
     	},
     	xaxis: {
 			title: 'Year',
