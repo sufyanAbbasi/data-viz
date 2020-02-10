@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>CO2 PPM Visualization</title>
+  <meta name="description" content="An interactive visualization of CO2 PPM.">
+  <meta name="author" content="Sufyan Abbasi @sufydotjs">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+	<div id="plot"></div>
+	<section>
+		<div class="container">
+			<label>
+				<input
+					type="checkbox" 
+					id="play-pause" 
+					name="play-pause"
+					checked
+				>
+				<div class="button play"><div>▶</div></div>
+				<div class="button pause"><div>❙❙</div></div>
+			</label>
+		</div>
+		<div class="container">
+			<input  type="range" 
+					id="year-slider" 
+					name="year-slider"
+					min="0"
+					max="0"
+					value="0"
+					step="1"
+			>	
+		</div>
+		<div class="container">
+			<div>
+				<p class="info year"></p>
+        		<p class="info ppm"></p>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>
+			Data Source:
+			<a href="https://sealevel.info/co2.html">SeaLevel.info</a>
+		</p>
+		<p>
+			Viz Inspiration:
+			<a href="https://twitter.com/kevpluck/status/1226517869271355392">@kevpluck</a>
+		</p>
+		<p>
+			Fork me!
+			<a href="https://github.com/sufyanAbbasi/data-viz/C02_ppm">github.com/sufyanAbbasi/data-viz/C02_ppm</a>
+		</p>
+	</footer>
+	<script src="data.js"></script>
+	<script src="plot.js"></script>
+</body>
+</html>
