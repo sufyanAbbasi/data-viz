@@ -20,6 +20,25 @@ html, body {
 	justify-content: center;
 }
 
+/* Landscape */
+@media only screen 
+  and (max-width: 850px) 
+  and (orientation: landscape) { 
+  	.column-layout {
+		flex-direction: row;
+	}
+
+	section > * {
+		margin-top: 30px;
+	}
+
+	footer {
+		display: block;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
 
 section {
 	height: calc(100% - 100px);
@@ -102,7 +121,6 @@ section {
 
 footer {
 	height: 100px;
-
 }
 
 footer p {

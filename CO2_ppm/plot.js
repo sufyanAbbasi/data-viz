@@ -217,7 +217,8 @@ function visualize() {
 			],
 		},
 	};
-	Plotly.newPlot('plot', data, layout);
+	const config = {responsive: true};
+	Plotly.newPlot('plot', data, layout, config);
 }
 
 function debounce(callback, wait, immediate = false) {
