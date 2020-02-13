@@ -256,7 +256,6 @@ const update = debounce((selectedYear) => {
 	currentLineTrace.x = years.slice(0, Math.max(yearIndex, 1));
 	currentLineTrace.y = ppmList.slice(0, Math.max(yearIndex, 1));
 	Plotly.redraw('plot');
-	Plotly.relayout(plot, 'scene.camera.eye', eye);
 
 	document.querySelector('.year').innerText = selectedYear;
 	document.querySelector('.ppm').innerText = Math.floor(CO2_PPM[year]) + ' ppm';
@@ -265,7 +264,7 @@ const update = debounce((selectedYear) => {
 let animationId = null;
 let buffer = 100;
 function setAnimation(playing) {
-	const slider = document.querySelector('#year-slider');
+	const slider = document.querySelector('.year-slider');
 	cancelAnimationFrame(animationId);
 	buffer = 0;
 	if (playing) {
@@ -292,13 +291,13 @@ function setAnimation(playing) {
 }
 
 function initialize() {
-	const playButton = document.querySelector('#play-pause');
+	const playButton = document.querySelector('.play-pause');
 	playButton.addEventListener('change', (event) => {
 	  setAnimation(playButton.checked);
 	});
 
 	setAnimation(playButton.checked);
-	const slider = document.querySelector('#year-slider');
+	const slider = document.querySelector('.year-slider');
 	slider.setAttribute('min', startYear);
 	slider.setAttribute('max', endYear);
 	slider.setAttribute('value', startYear);
@@ -308,6 +307,9 @@ function initialize() {
 	processData();
 	visualize();
 	update(startYear);
+	window.addEventListener('orientationchange', () => {
+		Plotly.redraw('plot');
+	});
 }
 
-initialize();
+window.onload = initialize;

@@ -14,6 +14,12 @@ html, body {
 	justify-content: space-evenly;
 }
 
+.row-layout {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
 .row-center {
 	display: flex;
 	flex-direction: row;
@@ -41,7 +47,8 @@ html, body {
 }
 
 section {
-	height: calc(100% - 100px);
+	height: calc(100% - 50px);
+	max-height: 700px;
 }
 
 #plot {
@@ -69,15 +76,19 @@ section {
     margin: 0;
 }
 
-#play-pause {
+.play-pause-container {
+	margin: auto 20px;
+}
+
+.play-pause {
 	display: none;
 }
 
-#play-pause~.button:hover {
+.play-pause~.button:hover {
 	background-color: #444;
 }
 
-#play-pause~.button {
+.play-pause~.button {
 	position: relative;
 	display: none;
 	background-color: #222;
@@ -91,36 +102,37 @@ section {
 	justify-content: space-around;
 }
 
-#play-pause~.button > * {
+.play-pause~.button > * {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
 }
 
-#play-pause~.play {
+.play-pause~.play {
 	display: block;
 }
 
-#play-pause~.pause {
+.play-pause~.pause {
 	display: none;
 }
 
-#play-pause:checked~.play {
+.play-pause:checked~.play {
 	display: none;
 }
 
-#play-pause:checked~.pause {
+.play-pause:checked~.pause {
 	display: block;
 }
 
-#year-slider {
+.year-slider {
 	width: 75%;
 	max-width: 500px;
 }
 
 footer {
-	height: 100px;
+	height: 50px;
+	margin-top: 30px;
 }
 
 footer p {
