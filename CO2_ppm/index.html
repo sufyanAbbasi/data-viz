@@ -13,9 +13,9 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-	<div id="plot"></div>
-	<section>
-		<div class="container">
+	<section class="column-layout">
+		<div id="plot"></div>
+		<div class="container row-center">
 			<label>
 				<input
 					type="checkbox" 
@@ -26,8 +26,6 @@
 				<div class="button play"><div>▶</div></div>
 				<div class="button pause"><div>❙❙</div></div>
 			</label>
-		</div>
-		<div class="container">
 			<input  type="range" 
 					id="year-slider" 
 					name="year-slider"
@@ -42,7 +40,7 @@
     		<p class="info ppm"></p>
 		</div>
 	</section>
-	<footer>
+	<footer class="column-layout">
 		<p>
 			Data Source:
 			<a href="https://sealevel.info/co2.html">SeaLevel.info</a>
